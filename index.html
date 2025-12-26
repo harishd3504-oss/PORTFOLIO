@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Harish D | Cyber Security Portfolio 🔐</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+:root{
+--gold:#ffd700;
+--glass:rgba(255,255,255,.08);
+--glow:0 0 25px rgba(255,215,0,.6);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#000;
+color:#fff;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+#progress{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+width:0%;
+background:var(--gold);
+z-index:3000;
+}
+
+#top-bar{
+position:fixed;
+top:4px;
+left:0;
+width:100%;
+height:6px;
+background:linear-gradient(90deg,transparent,var(--gold),transparent);
+box-shadow:0 0 30px var(--gold);
+z-index:2999;
+}
+
+.navbar{
+position:fixed;
+top:10px;
+left:0;
+width:100%;
+background:rgba(15,25,40,.95);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,215,0,.25);
+z-index:2500;
+}
+
+.navbar ul{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:38px;
+padding:18px;
+list-style:none;
+}
+
+.navbar a{
+color:#fff;
+text-decoration:none;
+font-weight:500;
+letter-spacing:.5px;
+position:relative;
+transition:.3s;
+}
+
+.navbar a.active{
+color:var(--gold);
+}
+
+.navbar a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0;
+height:2px;
+background:var(--gold);
+transition:.4s;
+}
+
+.navbar a:hover::after{
+width:100%;
+}
+
+.scroll-arrow{
+position:fixed;
+right:26px;
+width:48px;
+height:48px;
+border-radius:50%;
+background:linear-gradient(135deg,var(--gold),#fff2a0,var(--gold));
+display:flex;
+align-items:center;
+justify-content:center;
+color:#000;
+font-size:22px;
+cursor:pointer;
+box-shadow:var(--glow);
+z-index:2600;
+transition:.3s;
+}
+
+.scroll-arrow:hover{
+transform:scale(1.25);
+}
+
+#scrollTop{bottom:96px}
+#scrollBottom{bottom:28px}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-3;
+}
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:radial-gradient(circle at top,rgba(255,215,0,.05),rgba(0,0,0,.92));
+z-index:-2;
+}
+
+header{
+text-align:center;
+padding:220px 20px 140px;
+}
+
+.profile-wrapper{
+position:relative;
+display:inline-block;
+}
+
+.profile-pic{
+width:170px;
+height:170px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid var(--gold);
+box-shadow:var(--glow);
+}
+
+.profile-wrapper::before{
+content:"";
+position:absolute;
+inset:-12px;
+border-radius:50%;
+border:2px dashed var(--gold);
+animation:rotate 14s linear infinite;
+}
+
+@keyframes rotate{
+to{transform:rotate(360deg)}
+}
+
+header h1{
+font-size:3.4rem;
+margin-top:20px;
+}
+
+header span{
+color:var(--gold);
+text-shadow:var(--glow);
+}
+
+.typing{
+opacity:.85;
+margin-top:10px;
+min-height:24px;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:16px 42px;
+border-radius:50px;
+background:linear-gradient(120deg,var(--gold),#fff2a0,var(--gold));
+color:#000;
+font-weight:700;
+text-decoration:none;
+box-shadow:var(--glow);
+transition:.4s;
+}
+
+.btn:hover{
+transform:scale(1.15);
+box-shadow:0 0 70px var(--gold);
+}
+
+section{
+max-width:1200px;
+margin:auto;
+padding:100px 20px;
+opacity:0;
+transform:translateY(50px);
+transition:1s ease;
+}
+
+section.show{
+opacity:1;
+transform:none;
+}
+
+h2{
+text-align:center;
+font-size:2.6rem;
+margin-bottom:45px;
+background:linear-gradient(90deg,var(--gold),#fff,var(--gold));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.card{
+background:var(--glass);
+backdrop-filter:blur(18px);
+border-radius:26px;
+padding:36px;
+border:1px solid rgba(255,215,0,.3);
+transition:.5s;
+}
+
+.card:hover{
+transform:translateY(-14px);
+box-shadow:0 0 60px rgba(255,215,0,.7);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:26px;
+}
+
+ul{list-style:none;}
+ul li{margin:14px 0;}
+
+.socials{
+text-align:center;
+margin-top:40px;
+}
+
+.socials a{
+color:var(--gold);
+font-size:2.2rem;
+margin:0 14px;
+transition:.4s;
+}
+
+.socials a:hover{
+transform:scale(1.6);
+text-shadow:0 0 25px var(--gold);
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.contact-info p{
+margin:18px 0;
+font-size:1.1rem;
+}
+
+.contact-info a{
+color:var(--gold);
+text-decoration:none;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:14px;
+margin-bottom:18px;
+border-radius:8px;
+border:none;
+outline:none;
+font-size:1rem;
+}
+
+.contact-form button{
+padding:14px 34px;
+background:var(--gold);
+border:none;
+border-radius:8px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.contact-form button:hover{
+transform:scale(1.1);
+box-shadow:0 0 25px var(--gold);
+}
+
+footer{
+text-align:center;
+padding:40px;
+opacity:.85;
+}
+
+@media(max-width:768px){
+.navbar ul{gap:18px;font-size:.95rem}
+header h1{font-size:2.5rem}
+}
+</style>
+</head>
+
+<body>
+
+<div id="progress"></div>
+<div id="top-bar"></div>
+
+<nav class="navbar">
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="scroll-arrow" id="scrollTop"><i class="fas fa-arrow-up"></i></div>
+<div class="scroll-arrow" id="scrollBottom"><i class="fas fa-arrow-down"></i></div>
+
+<canvas id="matrix"></canvas>
+<div class="overlay"></div>
+
+<header id="about">
+<div class="profile-wrapper">
+<img src="profile.jpg" class="profile-pic">
+</div>
+<h1>Hi 👋 I'm <span>Harish D</span> 🔐</h1>
+<div class="typing" id="typing"></div>
+<a href="resume.jpg" class="btn" target="_blank">📄 Download Resume</a>
+</header>
+
+<!-- ===== YOUR ORIGINAL SECTIONS START (UNCHANGED) ===== -->
+
+<section>
+<h2>👨‍💻 About Me</h2>
+<div class="card">
+<p>Motivated Cyber Security undergraduate 🚀 specializing in ethical hacking, network security, and secure system design.</p><br>
+<p>🏆 <b>2025 Sai Hackfest Winner</b> – Innovation & real-world problem solving.</p><br>
+<p>Continuously improving through projects, certifications, and hands-on practice 🔐.</p>
+</div>
+</section>
+
+<section>
+<h2>💼 Experience & Volunteering</h2>
+<div class="card">
+<div style="margin-bottom:28px;">
+<p style="color:var(--gold);font-weight:600;">🎓 Student – Sri Sairam Engineering College</p>
+<span style="opacity:.8;">Aug 2024 – Present</span>
+</div>
+<div style="margin-bottom:28px;">
+<p style="color:var(--gold);font-weight:600;">🌐 Campus Ambassador – White Devils Tech Community™</p>
+<span style="opacity:.8;">Aug 2025 – Present</span>
+</div>
+<div style="margin-bottom:28px;">
+<p style="color:var(--gold);font-weight:600;">🤝 Member – IEEE</p>
+<span style="opacity:.8;">Dec 2024 – Present</span>
+</div>
+<div>
+<p style="color:var(--gold);font-weight:600;">👮‍♂️  Volunteer – SAIRAMIT NSS</p>
+<span style="opacity:.8;">Aug 2024 – Present</span>
+</div>
+</div>
+</section>
+
+<section>
+<h2>🎓 Education</h2>
+<div class="card">
+<ul>
+<li>🎓 <b>B.E Cyber Security</b> – Sri Sai Ram Engineering College (2024–2028) | CGPA: <b>8.68(First Year)</b></li>
+<li>🏫 <b>HSC & SSC</b> – Sri Sivaswami Kalalaya School | 10th: <b>85.6%</b> | 12th: <b>90.1%</b></li>
+</ul>
+</div>
+</section>
+
+<section id="skills">
+<h2>🛠 Technical Skills</h2>
+<div class="grid">
+<div class="card">💻 HTML • CSS • JavaScript</div>
+<div class="card">⚛️ React JS</div>
+<div class="card">🐍 Python</div>
+<div class="card">🛡 Cyber Security Fundamentals</div>
+</div>
+</section>
+
+<section>
+<h2>💻 Coding Experience (SkillRack)</h2>
+<div class="card">
+<ul>
+<li>🧠 Daily Tests (DT) & Daily Challenges (DC)</li>
+<li>📘 Coding Tracks & Tutorials</li>
+<li>🏆 Performance-based coding points</li>
+<li>🔗 <a href="http://www.skillrack.com/profile/495922/83f02be2f395a0daf9e04840cc8a6552338de040" target="_blank" style="color:var(--gold)">SkillRack Coding Profile</a></li>
+<li>📊 <a href="https://skillrack.gururaja.in/" target="_blank" style="color:var(--gold)">SkillRack Tracker Dashboard</a></li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>🏆 Certifications</h2>
+<div class="card">
+<ul>
+<li>🥇 NPTEL – UN Sustainable Development Goals (Elite)</li>
+<li>🥈 NPTEL – Joy of Computing using Python (Elite + Silver)</li>
+<li>📘 Kaggle – Introduction to Machine Learning</li>
+<li>📜 IBM SkillsBuild – Classifying Data Using IBM Granite</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>🤖 AI-Powered Learning Platform</h2>
+<div class="card">
+<p><b>Edwisely</b> is an AI-powered learning platform connecting college education with career growth.</p><br>
+<p>📲 <a href="https://play.google.com/store/apps/details?id=sail.collegestudent.edwisely.com" target="_blank" style="color:var(--gold)">Android App</a></p>
+<p>🍎 <a href="https://itunes.apple.com/us/app/edwisely-college-student/id1420569139?mt=8" target="_blank" style="color:var(--gold)">iOS App</a></p>
+</div>
+</section>
+
+<section id="projects">
+<h2>📂 Projects</h2>
+<div class="grid">
+<div class="card">🛒 Amazon Clone</div>
+<div class="card">📊 Expense Tracker</div>
+<div class="card">🌡 Temperature Converter</div>
+<div class="card">🔲 QR Code Scanner</div>
+<div class="card">🤖 AI Chatbot</div>
+<div class="card">🎯 AI Recommendation System</div>
+<div class="card">❌⭕ Tic-Tac-Toe</div>
+<div class="card">🚑 Medhavahini</div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<h2>📩 Contact Me</h2>
+<div class="card contact-grid">
+<div class="contact-info">
+<p>📞 <a href="tel:+919092459913">+91 9092459913</a></p>
+<p>📧 <a href="mailto:harishd3504@gmail.com">harishd3504@gmail.com</a></p>
+<p>📍 Mylapore, Chennai-04, India</p>
+</div>
+<form class="contact-form" id="contact-form">
+<input type="text" name="from_name" placeholder="Your Name" required>
+<input type="email" name="reply_to" placeholder="Your Email" required>
+<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+<button type="submit">🚀 Send Message</button>
+</form>
+</div>
+</section>
+
+<section>
+<h2>🔗 Connect with me for further interesting updates</h2>
+<div class="socials">
+<a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+<a href="https://wa.me/919092459913" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://www.snapchat.com/" target="_blank"><i class="fab fa-snapchat"></i></a>
+<a href="https://www.threads.net/" target="_blank"><i class="fab fa-threads"></i></a>
+<a href="https://chat.arattai.in/app/download" target="_blank"><i class="fas fa-comments"></i></a>
+</div>
+</section>
+
+<footer>
+<p>🚀 Designed & Built by Harish D | Cyber Security Portfolio</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+emailjs.init("FBXWow_okI2DFO_Xx");
+
+document.getElementById("contact-form").addEventListener("submit",function(e){
+e.preventDefault();
+emailjs.sendForm("service_q644vb7","template_rr00deb",this)
+.then(function(){
+alert("Message sent successfully!");
+},function(){
+alert("Failed to send message.");
+});
+this.reset();
+});
+</script>
+
+<script>
+const canvas=document.getElementById("matrix");
+const ctx=canvas.getContext("2d");
+canvas.width=innerWidth;
+canvas.height=innerHeight;
+
+const letters="01 CYBER SECURITY AI NETWORK";
+const font=16;
+const cols=canvas.width/font;
+const drops=Array.from({length:cols},()=>Math.random()*canvas.height);
+
+function draw(){
+ctx.fillStyle="rgba(0,0,0,.08)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle="#ffd700";
+ctx.font=font+"px monospace";
+drops.forEach((y,i)=>{
+ctx.fillText(letters[Math.floor(Math.random()*letters.length)],i*font,y);
+drops[i]+=font;
+if(drops[i]>canvas.height && Math.random()>0.97)drops[i]=0;
+});
+requestAnimationFrame(draw);
+}
+draw();
+
+const text="Cyber Security | Ethical Hacker | Problem Solver";
+let i=0;
+setInterval(()=>{
+document.getElementById("typing").textContent=text.slice(0,i++);
+if(i>text.length)i=0;
+},120);
+
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>e.isIntersecting && e.target.classList.add("show"));
+},{threshold:.2});
+
+document.querySelectorAll("section").forEach(s=>obs.observe(s));
+
+onresize=()=>{
+canvas.width=innerWidth;
+canvas.height=innerHeight;
+};
+
+document.getElementById("scrollTop").onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
+document.getElementById("scrollBottom").onclick=()=>window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"});
+
+window.addEventListener("scroll",()=>{
+const scrolled=(window.scrollY/(document.body.scrollHeight-innerHeight))*100;
+document.getElementById("progress").style.width=scrolled+"%";
+});
+
+const navLinks=document.querySelectorAll(".navbar a");
+const allSections=document.querySelectorAll("section,header");
+
+const navObserver=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+navLinks.forEach(l=>l.classList.remove("active"));
+const id=entry.target.getAttribute("id");
+const active=document.querySelector('.navbar a[href="#'+id+'"]');
+if(active)active.classList.add("active");
+}
+});
+},{threshold:.4});
+
+allSections.forEach(sec=>navObserver.observe(sec));
+</script>
+
+</body>
+</html>
