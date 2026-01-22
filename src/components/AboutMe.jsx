@@ -41,7 +41,7 @@ const AboutMe = () => {
                         {[
                             { icon: <Heart className="text-red-500" />, title: "Passion", desc: "For Cyber Security" },
                             { icon: <Laptop className="text-blue-500" />, title: "Focus", desc: "Fullstack Dev" },
-                            { icon: <ShieldCheck className="text-green-500" />, title: "Goal", desc: "Ethical Hacker" },
+                            { icon: <ShieldCheck className="text-green-500" />, title: "Goal", desc: "Cyber Security Specialist" },
                             { icon: <Coffee className="text-orange-500" />, title: "Mindset", desc: "Always Learning" }
                         ].map((item, idx) => (
                             <motion.div
