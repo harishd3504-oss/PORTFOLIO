@@ -1,7 +1,5 @@
-// Placeholders - Replace these with real file imports when files are added to src/assets
-const stif = "https://ui-avatars.com/api/?name=STIF&background=ffffff&color=00bcd4&size=128";
-const offerLetter = "#"; // Replace with path to actual file or URL
-
+import stif from '../assets/stif.png';
+import offerLetter from '../assets/offer_letter.png';
 import { Briefcase, ExternalLink, Github, FileText } from 'lucide-react';
 
 const Internship = () => {
@@ -37,7 +35,7 @@ const Internship = () => {
 
                         <motion.a
                             href={offerLetter}
-                            target={offerLetter === "#" ? "_self" : "_blank"}
+                            target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
