@@ -11,6 +11,7 @@ import CodingExperience from './components/CodingExperience';
 import AboutMe from './components/AboutMe';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Internship from './components/Internship';
 
 function App() {
   const [activeSection, setActiveSection] = useState('Home');
@@ -19,6 +20,7 @@ function App() {
     switch (activeSection) {
       case 'Home': return <Hero />;
       case 'Projects': return <Projects />;
+      case 'Internship': return <Internship />;
       case 'Skills': return <Skills />;
       case 'Certificates': return <Certificates />;
       case 'Blog': return <Blog />;

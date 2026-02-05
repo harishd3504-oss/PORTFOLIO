@@ -19,6 +19,13 @@ const Resume = () => {
             description: "Completed higher secondary education with a strong focus on Computer Science and Mathematics."
         },
         {
+            institution: "Dakshina Bharat Hindi Prachar Sabha",
+            degree: "Hindi Language and Literature",
+            duration: "Feb 2016 - Feb 2017",
+            grade: "", // Grade not specified in screenshot, leaving empty or optional
+            description: "Completed Hindi language studies."
+        },
+        {
             institution: "SSK CBSE School",
             degree: "10th Standard",
             duration: "2021 - 2022",

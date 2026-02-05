@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Code, Globe, Database, PenTool, Users } from 'lucide-react';
+import vscode from '../assets/vscode.png';
+import antigravity from '../assets/antigravity.png';
 
 const Skills = () => {
     const skillCategories = [
@@ -34,9 +36,11 @@ const Skills = () => {
         { name: "Python", slug: "python", color: "3776AB", shadow: "shadow-blue-400/20" },
         { name: "Linux", slug: "linux", color: "FCC624", shadow: "shadow-gray-300/20" },
         { name: "Github", slug: "github", color: "FFFFFF", shadow: "shadow-gray-100/20" },
-        { name: "C", slug: "c", color: "A8B9CC", shadow: "shadow-blue-200/20" },
-        { name: "PHP", slug: "php", color: "777BB4", shadow: "shadow-purple-500/20" },
-        { name: "MySQL", slug: "mysql", color: "4479A1", shadow: "shadow-blue-700/20" }
+        { name: 'VSCode', slug: 'vscode', color: '007ACC', shadow: 'shadow-blue-500/20' },
+        { name: 'Antigravity', slug: 'antigravity', color: 'FF4500', shadow: 'shadow-orange-500/20' }, // Custom handling for Antigravity usually
+        { name: 'C', slug: 'c', color: 'A8B9CC', shadow: 'shadow-blue-200/20' },
+        { name: 'PHP', slug: 'php', color: '777BB4', shadow: 'shadow-purple-500/20' },
+        { name: 'MySQL', slug: 'mysql', color: '4479A1', shadow: 'shadow-blue-700/20' }
     ];
 
     return (
@@ -72,7 +76,10 @@ const Skills = () => {
                         >
                             <div className={`w-16 h-16 rounded-full glass border-cyan-500/30 flex items-center justify-center p-3 ${skill.shadow} neon-glow`}>
                                 <img
-                                    src={skill.slug === 'css3' ? 'https://img.icons8.com/color/48/css3.png' : `https://cdn.simpleicons.org/${skill.slug}/${skill.color}`}
+                                    src={skill.slug === 'css3' ? 'https://img.icons8.com/color/48/css3.png' :
+                                        skill.slug === 'vscode' ? vscode :
+                                            skill.slug === 'antigravity' ? antigravity :
+                                                `https://cdn.simpleicons.org/${skill.slug}/${skill.color}`}
                                     alt={skill.name}
                                     className="w-full h-full object-contain"
                                     onError={(e) => {

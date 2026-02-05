@@ -18,6 +18,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     const navLinks = [
         { name: 'Home' },
         { name: 'Projects' },
+        { name: 'Internship' },
         { name: 'Skills' },
         { name: 'Certificates' },
         { name: 'Blog' },
