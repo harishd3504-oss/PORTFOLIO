@@ -51,6 +51,7 @@ const Internship = () => {
                         {/* Project 1 */}
                         <div className="glass p-6 space-y-4 hover:bg-white/5 transition-colors">
                             <h4 className="text-xl font-bold text-white">Bank Application Mini Frontend</h4>
+                            <p className="text-xs text-cyan-400 font-mono">BANK-APPLICATION-MINI-FRONTEND-STIF</p>
                             <p className="text-gray-400 text-sm">
                                 A frontend mini project for a banking application.
                             </p>
@@ -79,6 +80,7 @@ const Internship = () => {
                         {/* Project 2 */}
                         <div className="glass p-6 space-y-4 hover:bg-white/5 transition-colors">
                             <h4 className="text-xl font-bold text-white">E-Commerce FullStack Mini</h4>
+                            <p className="text-xs text-cyan-400 font-mono">ECOMMERCE-FullStack-Mini-STIF</p>
                             <p className="text-gray-400 text-sm">
                                 A full-stack mini project for an e-commerce platform.
                             </p>
