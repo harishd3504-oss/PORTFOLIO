@@ -15,7 +15,7 @@ const Resume = () => {
             institution: "SSK Matric Higher Secondary School",
             degree: "11th and 12th Standard",
             duration: "2022 - 2024",
-            grade: "89% and 90.1%",
+            grade: "89.2% and 90.1%",
             description: "Completed higher secondary education with a strong focus on Computer Science and Mathematics."
         },
         {

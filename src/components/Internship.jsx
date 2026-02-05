@@ -1,6 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Briefcase, ExternalLink, Github } from 'lucide-react';
+// Placeholders - Replace these with real file imports when files are added to src/assets
+const stif = "https://ui-avatars.com/api/?name=STIF&background=ffffff&color=00bcd4&size=128";
+const offerLetter = "#"; // Replace with path to actual file or URL
+
+import { Briefcase, ExternalLink, Github, FileText } from 'lucide-react';
 
 const Internship = () => {
     return (
@@ -22,9 +24,29 @@ const Internship = () => {
                     viewport={{ once: true }}
                     className="glass p-8 space-y-8"
                 >
-                    <div className="border-b border-white/5 pb-6">
-                        <h3 className="text-2xl font-bold text-white mb-2">Sri Sairam Techno Incubator Foundation</h3>
-                        <p className="text-cyan-400 font-medium">Internship Projects</p>
+                    <div className="border-b border-white/5 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                        <div className="flex items-center gap-4">
+                            <div className="w-16 h-16 bg-white rounded-lg p-2 flex items-center justify-center">
+                                <img src={stif} alt="STIF Logo" className="w-full h-full object-contain" />
+                            </div>
+                            <div>
+                                <h3 className="text-2xl font-bold text-white mb-1">Sri Sairam Techno Incubator Foundation</h3>
+                                <p className="text-cyan-400 font-medium">Internship Projects</p>
+                            </div>
+                        </div>
+
+                        <motion.a
+                            href={offerLetter}
+                            target={offerLetter === "#" ? "_self" : "_blank"}
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={(e) => offerLetter === "#" && e.preventDefault()}
+                            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-700 rounded-xl font-bold text-white shadow-lg shadow-cyan-500/20 w-fit cursor-pointer"
+                        >
+                            <FileText size={20} />
+                            View Offer Letter
+                        </motion.a>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
