@@ -1,5 +1,7 @@
-import stif from '../assets/stif.png';
-import offerLetter from '../assets/offer_letter.png';
+// Reverting to placeholders to fix crash
+const stif = "https://ui-avatars.com/api/?name=STIF&background=ffffff&color=00bcd4&size=128";
+const offerLetter = "#";
+
 import { Briefcase, ExternalLink, Github, FileText } from 'lucide-react';
 
 const Internship = () => {
@@ -35,7 +37,7 @@ const Internship = () => {
 
                         <motion.a
                             href={offerLetter}
-                            target="_blank"
+                            target={offerLetter === "#" ? "_self" : "_blank"}
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
