@@ -52,6 +52,13 @@ const Certificates = () => {
                 icon: <Award className="text-yellow-500" />
             },
             {
+                title: "Predict-G Participation",
+                issuer: "Chennai Institute of Technology",
+                year: "2026",
+                image: "/certificates/predict-g.jpg",
+                icon: <Award className="text-cyan-500" />
+            },
+            {
                 title: "Embedded Systems and IoT Webinar",
                 issuer: "Igniters",
                 year: "2025",

@@ -21,6 +21,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         { name: 'Internship' },
         { name: 'Skills' },
         { name: 'Certificates' },
+        { name: 'Gallery' },
         { name: 'Blog' },
         { name: 'Resume' },
         { name: 'Coding Experience' },

@@ -12,6 +12,7 @@ import AboutMe from './components/AboutMe';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Internship from './components/Internship';
+import PhotoGallery from './components/PhotoGallery';
 
 function App() {
   const [activeSection, setActiveSection] = useState('Home');
@@ -23,6 +24,7 @@ function App() {
       case 'Internship': return <Internship />;
       case 'Skills': return <Skills />;
       case 'Certificates': return <Certificates />;
+      case 'Gallery': return <PhotoGallery />;
       case 'Blog': return <Blog />;
       case 'Resume': return <Resume />;
       case 'Coding Experience': return <CodingExperience />;

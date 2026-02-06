@@ -22,7 +22,7 @@ const Resume = () => {
             institution: "Dakshina Bharat Hindi Prachar Sabha",
             degree: "Hindi Language and Literature",
             duration: "Feb 2016 - Feb 2017",
-            grade: "", // Grade not specified in screenshot, leaving empty or optional
+            grade: "First and Second Class",
             description: "Completed Hindi language studies."
         },
         {
