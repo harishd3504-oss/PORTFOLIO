@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Code, Globe, Database, PenTool, Users } from 'lucide-react';
+import { Sparkles, Code, Globe, Database, PenTool, Users, Terminal } from 'lucide-react';
 import vscode from '../assets/vscode.png';
 import antigravity from '../assets/antigravity.png';
 
@@ -25,6 +25,11 @@ const Skills = () => {
             title: "Soft Skills",
             icon: <Users size={20} />,
             skills: ["Teamwork", "Collaboration", "Problem Solving", "Adaptability"]
+        },
+        {
+            title: "IDE & Shells",
+            icon: <Terminal size={20} />,
+            skills: ["VS Code", "Antigravity"]
         }
     ];
 

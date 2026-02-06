@@ -1,13 +1,16 @@
-// Reverting to placeholders to fix crash
-const stif = "https://ui-avatars.com/api/?name=STIF&background=ffffff&color=00bcd4&size=128";
-const offerLetter = "#";
-
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Briefcase, ExternalLink, Github, FileText } from 'lucide-react';
+
+// Assets
+import stifLogo from '../assets/stif.png';
+import offerLetterImg from '../assets/offer_letter.png';
 
 const Internship = () => {
     return (
         <section id="internship" className="py-24 px-6 relative">
             <div className="max-w-7xl mx-auto space-y-12">
+                {/* Section Header */}
                 <div className="space-y-4">
                     <div className="flex items-center gap-2 text-cyan-400">
                         <Briefcase size={24} />
@@ -18,16 +21,28 @@ const Internship = () => {
                     </p>
                 </div>
 
+                {/* Main Content Card */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="glass p-8 space-y-8"
                 >
+                    {/* Company Header */}
                     <div className="border-b border-white/5 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
                         <div className="flex items-center gap-4">
-                            <div className="w-16 h-16 bg-white rounded-lg p-2 flex items-center justify-center">
-                                <img src={stif} alt="STIF Logo" className="w-full h-full object-contain" />
+                            <div className="w-20 h-20 bg-white rounded-lg p-2 flex items-center justify-center shrink-0">
+                                <img
+                                    src={stifLogo}
+                                    alt="STIF Logo"
+                                    className="w-full h-full object-contain"
+                                    onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.style.display = 'none'; // Hide broken image
+                                        e.target.parentNode.classList.add('bg-gray-800'); // Fallback bg
+                                        e.target.parentNode.innerHTML = '<span class="text-xs text-gray-500 font-bold">STIF</span>';
+                                    }}
+                                />
                             </div>
                             <div>
                                 <h3 className="text-2xl font-bold text-white mb-1">Sri Sairam Techno Incubator Foundation</h3>
@@ -35,38 +50,32 @@ const Internship = () => {
                             </div>
                         </div>
 
+                        {/* Offer Letter Button */}
                         <motion.a
-                            href={offerLetter}
-                            target={offerLetter === "#" ? "_self" : "_blank"}
+                            href={offerLetterImg}
+                            target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            onClick={(e) => offerLetter === "#" && e.preventDefault()}
-                            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-700 rounded-xl font-bold text-white shadow-lg shadow-cyan-500/20 w-fit cursor-pointer"
+                            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-700 rounded-xl font-bold text-white shadow-lg shadow-cyan-500/20 w-fit shrink-0"
                         >
                             <FileText size={20} />
                             View Offer Letter
                         </motion.a>
                     </div>
 
+                    {/* Projects Grid */}
                     <div className="grid md:grid-cols-2 gap-6">
                         {/* Project 1 */}
                         <div className="glass p-6 space-y-4 hover:bg-white/5 transition-colors">
-                            <h4 className="text-xl font-bold text-white">Bank Application Mini Frontend</h4>
-                            <p className="text-xs text-cyan-400 font-mono">BANK-APPLICATION-MINI-FRONTEND-STIF</p>
+                            <div>
+                                <h4 className="text-xl font-bold text-white">Bank Application Mini Frontend</h4>
+                                <p className="text-xs text-cyan-400 font-mono mt-1 break-all">BANK-APPLICATION-MINI-FRONTEND-STIF</p>
+                            </div>
                             <p className="text-gray-400 text-sm">
                                 A frontend mini project for a banking application.
                             </p>
                             <div className="flex gap-4">
-                                <a
-                                    href="http://localhost:5173" // Placeholder as requested
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-2 px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg text-sm font-bold transition-colors"
-                                >
-                                    <ExternalLink size={16} />
-                                    Project
-                                </a>
                                 <a
                                     href="https://github.com/harishd3504-oss/BANK-APPLICATION-MINI-FRONTEND-STIF.git"
                                     target="_blank"
@@ -81,21 +90,14 @@ const Internship = () => {
 
                         {/* Project 2 */}
                         <div className="glass p-6 space-y-4 hover:bg-white/5 transition-colors">
-                            <h4 className="text-xl font-bold text-white">E-Commerce FullStack Mini</h4>
-                            <p className="text-xs text-cyan-400 font-mono">ECOMMERCE-FullStack-Mini-STIF</p>
+                            <div>
+                                <h4 className="text-xl font-bold text-white">E-Commerce FullStack Mini</h4>
+                                <p className="text-xs text-cyan-400 font-mono mt-1 break-all">ECOMMERCE-FullStack-Mini-STIF</p>
+                            </div>
                             <p className="text-gray-400 text-sm">
                                 A full-stack mini project for an e-commerce platform.
                             </p>
                             <div className="flex gap-4">
-                                <a
-                                    href="http://localhost:5173" // Placeholder as requested
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-2 px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg text-sm font-bold transition-colors"
-                                >
-                                    <ExternalLink size={16} />
-                                    Project
-                                </a>
                                 <a
                                     href="https://github.com/harishd3504-oss/ECOMMERCE-FullStack-Mini-STIF.git"
                                     target="_blank"
