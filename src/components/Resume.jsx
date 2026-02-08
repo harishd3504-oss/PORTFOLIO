@@ -8,7 +8,7 @@ const Resume = () => {
             institution: "SRI SAIRAM ENGINEERING COLLEGE",
             degree: "Bachelor of Engineering CSE cybersecurity 2nd year",
             duration: "2024 - 2028",
-            grade: "8.68(first year)",
+            grade: "8.86 CGPA(Second year 3rd semester )",
             description: "Focusing on Fullstack Development and AI tools. Actively participating in technical workshops and projects."
         },
         {

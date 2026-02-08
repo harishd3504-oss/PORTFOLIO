@@ -48,7 +48,7 @@ const Certificates = () => {
                 title: "Cyber Synapse 2.0 Symposium",
                 issuer: "Sri Sairam Institute of Technology",
                 year: "2025",
-                image: "/certificates/cyber_synapse_others_new.png",
+                image: "/certificates/cyber_synapse_straight_fixed.jpg",
                 icon: <Award className="text-yellow-500" />
             },
             {
@@ -64,6 +64,13 @@ const Certificates = () => {
                 year: "2025",
                 image: "/certificates/igniters_real.jpg",
                 icon: <Cpu className="text-blue-500" />
+            },
+            {
+                title: "IEEE Day 2025 - Pwnage Party",
+                issuer: "Sri Sai Ram Institute of Technology",
+                year: "2025",
+                image: "/certificates/ieee_day_2025.jpg.jpeg",
+                icon: <Award className="text-green-500" />
             }
         ]
     };
