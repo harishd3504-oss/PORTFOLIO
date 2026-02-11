@@ -10,28 +10,28 @@ const Certificates = () => {
             {
                 title: "Networking Devices and Initial Configuration",
                 issuer: "Cisco Networking Academy",
-                year: "2025",
+                year: "Dec 2025",
                 image: "/certificates/cisco.png",
                 icon: <Shield className="text-blue-500" />
             },
             {
                 title: "Classifying Data Using IBM Granite",
                 issuer: "IBM SkillsBuild",
-                year: "2025",
+                year: "Oct 2025",
                 image: "/certificates/ibm.png",
                 icon: <Cpu className="text-cyan-500" />
             },
             {
                 title: "Intro to Machine Learning",
                 issuer: "Kaggle",
-                year: "2025",
+                year: "Nov 2025",
                 image: "/certificates/kaggle.png",
                 icon: <Award className="text-yellow-500" />
             },
             {
                 title: "The Joy of Computing using Python",
-                issuer: "NPTEL Online Certification",
-                year: "2025",
+                issuer: "NPTEL Online Certification (81% Elite)",
+                year: "Oct 2025",
                 image: "/certificates/nptel.jpg",
                 icon: <BookOpen className="text-purple-500" />
             }
@@ -40,35 +40,35 @@ const Certificates = () => {
             {
                 title: "Cyber Warrior Quiz Competition",
                 issuer: "Project Cyber Shield",
-                year: "2025",
+                year: "Aug 13, 2025",
                 image: "/certificates/cyber_warrior_others_new.png",
                 icon: <Shield className="text-cyan-400" />
             },
             {
                 title: "Cyber Synapse 2.0 Symposium",
-                issuer: "Sri Sairam Institute of Technology",
-                year: "2025",
+                issuer: "Sairam Institute of Technology",
+                year: "Nov 06, 2025",
                 image: "/certificates/cyber_synapse_straight_fixed.jpg",
                 icon: <Award className="text-yellow-500" />
             },
             {
                 title: "Predict-G Participation",
                 issuer: "Chennai Institute of Technology",
-                year: "2026",
+                year: "Feb 04, 2026",
                 image: "/certificates/predict-g.jpg",
                 icon: <Award className="text-cyan-500" />
             },
             {
                 title: "Embedded Systems and IoT Webinar",
                 issuer: "Igniters",
-                year: "2025",
+                year: "Aug 30, 2025",
                 image: "/certificates/igniters_real.jpg",
                 icon: <Cpu className="text-blue-500" />
             },
             {
-                title: "IEEE Day 2025 - Pwnage Party",
-                issuer: "Sri Sai Ram Institute of Technology",
-                year: "2025",
+                title: "IEEE Day 2025 - Pwnage Party (2nd Place)",
+                issuer: "Sri Sairam Institute of Technology",
+                year: "Oct 07, 2025",
                 image: "/certificates/ieee_day_2025.jpg.jpeg",
                 icon: <Award className="text-green-500" />
             }

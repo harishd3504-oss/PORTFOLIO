@@ -39,10 +39,10 @@ const Projects = () => {
         {
             title: "Cybersecurity Portfolio Website",
             description: "A modern and responsive portfolio built with React and Framer Motion, showcasing projects, skills, and achievements.",
-            image: "/project-portfolio.png",
+            image: "/projects/Cybersecurity%20portfolio_%20skills%20and%20projects.png",
             tags: ["React", "Framer Motion", "Tailwind CSS"],
             demoUrl: "https://github.com/harishd3504-oss",
-            codeUrl: "https://github.com/harishd3504-oss/React-Portfolio.git"
+            codeUrl: "https://github.com/harishd3504-oss/PORTFOLIO.git"
         }
     ];
 

@@ -7,11 +7,22 @@ const PhotoGallery = () => {
     const [isPaused, setIsPaused] = useState(false);
 
     const photos = [
-        { id: 1, src: '/gallery/photo1.png', title: 'IEEE DAY', category: 'Events' },
-        { id: 2, src: '/gallery/photo2.png', title: '12th SCHOOL ANUAL DAY', category: 'Awards' },
-        { id: 3, src: '/gallery/photo3.png', title: '11th SCHOOL ANUAL DAY', category: 'Education' },
-        { id: 4, src: '/gallery/photo4.png', title: 'SIRD', category: 'Cyber Security' },
-        { id: 5, src: '/gallery/photo5.jpg', title: 'IIT RESEARCH PARK', category: 'Experience' }
+        { id: 1, src: '/gallery/ieeebay.png', title: 'IEEE AWARD CEREMONY', category: 'Events' },
+        { id: 2, src: '/gallery/annual_day_smile.png', title: '12th ANUAL DAY', category: 'Milestones' },
+        { id: 3, src: '/gallery/annual_day_award.png', title: '11th ANUAL DAY', category: 'Milestones' },
+        { id: 4, src: '/gallery/cybersecurity_group.png', title: 'SIRD VISIT', category: 'Cyber Security' },
+        { id: 5, src: '/gallery/iit_research_park_group.jpg', title: 'IIT RESEARCH PARK', category: 'Education' },
+        { id: 6, src: '/gallery/sairam_workshop_audience.jpg', title: 'Hacking workshop', category: 'Workshops' },
+        { id: 7, src: '/gallery/student_resource_guide.png', title: 'MongoDb Workshop', category: 'Workshops' },
+        { id: 8, src: '/gallery/cybersecurity_workshop.jpg', title: 'Cyber Forensics Workshop', category: 'Workshops' },
+        { id: 9, src: '/gallery/agile_training.jpg', title: 'Agile Software Workshop', category: 'Workshops' },
+        { id: 10, src: '/gallery/engineering_superpower_group.png', title: '4th Semester Orientation', category: 'Orientation' },
+        { id: 11, src: '/gallery/seven_habits_book.png', title: '7Habits Of Highly Effective Teens', category: 'Growth' },
+        { id: 12, src: '/gallery/sairam_event_group.jpg', title: 'IEEE day Award Distribution', category: 'Awards' },
+        { id: 13, src: '/gallery/graduation_prep.jpg', title: 'Cyber Security Workshop', category: 'Workshops' },
+        { id: 14, src: '/gallery/pete_tech_centre.jpg', title: 'Industrial Visit-Precision Engineering', category: 'Industry' },
+        { id: 15, src: '/gallery/safer_internet_day.jpg', title: 'Responsive Use Of AI Workshop', category: 'AI' },
+        { id: 16, src: '/gallery/industrial_estate_visit.jpg', title: 'IV Group Photo', category: 'Industry' }
     ];
 
     // Double the photos for seamless looping
@@ -29,7 +40,7 @@ const PhotoGallery = () => {
                         <h2 className="text-3xl font-bold uppercase tracking-widest">Photo Gallery</h2>
                     </div>
                     <p className="text-gray-400">
-                        Capturing moments from my journey and professional milestones.
+                        A visual journey through my professional milestones and events.
                     </p>
                 </div>
             </div>
@@ -42,12 +53,12 @@ const PhotoGallery = () => {
             >
                 <motion.div
                     className="flex gap-8 px-4"
-                    animate={{ x: isPaused ? 0 : [0, -1320] }} // Adjust -1320 based on items width + gap (approx)
+                    animate={{ x: isPaused ? 0 : [0, -6912] }} // Approx 432px per item (400px + 32px gap) * 16 items
                     transition={{
                         x: {
                             repeat: Infinity,
                             repeatType: "loop",
-                            duration: 30,
+                            duration: 60, // Slower duration for more content
                             ease: "linear"
                         }
                     }}

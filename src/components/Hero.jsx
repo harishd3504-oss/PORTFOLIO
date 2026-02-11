@@ -41,19 +41,23 @@ const Hero = () => {
                     className="relative flex justify-center lg:justify-end"
                 >
                     <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-cyan-500 to-blue-600 neon-glow">
-                        <div className="w-full h-full rounded-full border-4 border-dark overflow-hidden bg-dark-accent">
+                        <div className="w-full h-full rounded-full border-4 border-dark overflow-hidden bg-dark-accent shadow-2xl">
                             <img
-                                src="/profile.png"
+                                src="/photo.jpg.jpeg"
                                 alt="Harish D"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&auto=format&fit=crop&q=60'; }}
                             />
                         </div>
                         {/* Animated Ring */}
                         <motion.div
                             animate={{ rotate: 360 }}
-                            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                             className="absolute -inset-4 border-2 border-dashed border-cyan-500/30 rounded-full"
                         ></motion.div>
+
+                        {/* Status Indicator */}
+                        <div className="absolute bottom-6 right-6 w-5 h-5 bg-green-500 border-4 border-dark rounded-full animate-pulse shadow-[0_0_15px_rgba(34,197,94,0.5)]"></div>
                     </div>
                 </motion.div>
 
