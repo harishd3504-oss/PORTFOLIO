@@ -13,12 +13,16 @@ import {
     Download,
     Terminal,
     Code2,
-    Cpu
+    Cpu,
+    Twitter,
+    AtSign
 } from 'lucide-react';
 
 const Hero = () => {
     const socialLinks = [
         { icon: <Linkedin size={24} />, url: 'https://www.linkedin.com/in/harish-d-420617328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', color: 'hover:text-blue-500' },
+        { icon: <Twitter size={24} />, url: 'https://x.com/harish_d12345', color: 'hover:text-white' },
+        { icon: <AtSign size={24} />, url: 'https://www.threads.net/@fraudual_harish', color: 'hover:text-white' },
         { icon: <Github size={24} />, url: 'https://github.com/harishd3504-oss', color: 'hover:text-gray-400' },
         { icon: <Mail size={24} />, url: 'mailto:harishd3504@gmail.com', color: 'hover:text-red-500' },
         { icon: <MessageCircle size={24} />, url: 'https://whatsapp.com/dl/', color: 'hover:text-green-500' },

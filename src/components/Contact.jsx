@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Linkedin, Instagram, Facebook, MessageCircle, Mail, Sparkles } from 'lucide-react';
+import { Github, Linkedin, Instagram, Facebook, MessageCircle, Mail, Sparkles, Twitter, AtSign } from 'lucide-react';
 
 const Contact = () => {
     const socialLinks = [
         { icon: <Github size={20} />, url: 'https://github.com/harishd3504-oss' },
         { icon: <Linkedin size={20} />, url: 'https://www.linkedin.com/in/harish-d-420617328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
+        { icon: <Twitter size={20} />, url: 'https://x.com/harish_d12345' },
+        { icon: <AtSign size={20} />, url: 'https://www.threads.net/@fraudual_harish' },
         { icon: <Mail size={20} />, url: 'mailto:harishd3504@gmail.com' },
         { icon: <MessageCircle size={20} />, url: 'https://whatsapp.com/dl/' },
         { icon: <Instagram size={20} />, url: 'https://www.instagram.com/fraudual_harish?igsh=MWVjZWJzN3l4YzJnNw==' },
